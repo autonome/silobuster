@@ -34,7 +34,7 @@
         
         <p><b>The generator supports Twitter cards, Pinterest rich pins, Google's structured data and Facebook's Open Graph.</b></p>
 
-        <p>Add this markup to your web pages to make links to your site look great in social apps and websites! Also, making outbound content look attractive
+        <p>Add this markup to your web pages to make links to your site <b>look great in social apps and websites</b>! Also, making outbound content look attractive
         <em>helps people escape these content silos and venture back out onto the wild wild web!</em></p>
 
         <p><b>USAGE:</b> Fill out the form, and then copy and paste the markup into your web page in between the &lt;head&gt; tags.</p>
@@ -78,7 +78,12 @@
         TODO: make into a select: website, article, blog
         -->
         <label for="contentType">Content Type</label>
-        <input placeholder="article" id="contentType" type="text" class="u-full-width">
+        <!--<input placeholder="website, article or blog" id="contentType" type="text" class="u-full-width">-->
+        <select class="u-full-width" id="contentType">
+          <option value="website">Website</option>
+          <option value="article">Article</option>
+          <option value="blog">Blog</option>
+        </select>
 
         <label for="siteName">Site Name</label>
         <input placeholder="Your Site Name" id="siteName" type="text" class="u-full-width">
@@ -202,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
     lines.push('<meta name="twitter:site" content="' + fields.publisherTwitterHandle + '">');
     lines.push('<meta name="twitter:title" content="' + fields.pageTitle + '">');
     lines.push('<meta name="twitter:description" content="' + fields.pageDescription + '">');
-    lines.push('<meta name="twitter:creator" content="' + authorTwitterHandle + '">');
+    lines.push('<meta name="twitter:creator" content="' + fields.authorTwitterHandle + '">');
     lines.push('<!-- Twitter summary card with large image must be at least 280x150px -->');
     lines.push('<meta name="twitter:image" content="' + fields.summaryImage + '">');
     lines.push('<meta name="twitter:image:alt" content="' + fields.pageDescription + '">');
